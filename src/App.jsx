@@ -2,7 +2,7 @@
 import './App.css'
 import BlvckTumbler from './Blvcktumbler'
 import CoffeeSection from './CoffeeSection'
-import Footer from './Footer'
+import Footer from "./components/Footer";
 import OrderForm from './OrderForm'
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <BlvckTumbler />
    <CoffeeSection />
    <OrderForm />
-   <Footer /> 
+  <Footer />
 
     </>
   )
