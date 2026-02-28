@@ -1,8 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+
 
 
 const BlvckTumbler = () => {
+    const [open, setOpen] = useState(false);
   return (
     <section className="relative w-full h-screen bg-[#0f1720] text-white overflow-hidden">
       
@@ -11,11 +15,37 @@ const BlvckTumbler = () => {
         <h1 className="text-2xl font-semibold tracking-wider">
           <span className="text-amber-500">CODERS</span> COFFEE.
         </h1>
-        <div className="space-y-1 cursor-pointer">
-          <div className="w-6 h-0.5 bg-white"></div>
-          <div className="w-6 h-0.5 bg-white"></div>
-          <div className="w-6 h-0.5 bg-white"></div>
+       <div
+        className="absolute top-8 right-6 z-50 flex flex-col  gap-1 cursor-pointer"
+        onClick={() => setOpen(!open)}
+      >
+        <span className="w-7 h-1 bg-white transition-all"></span>
+        <span className="w-7 h-1 bg-white transition-all"></span>
+        <span className="w-7 h-1 bg-white transition-all"></span>
+      </div>
+      <div
+         className={`absolute top-0 right-0 h-screen w-24 bg-gradient-to-b bg-[#F19509]/80 flex flex-col items-center py-8 transform transition-transform duration-500 ease-in-out ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+       
+        <div className="mt-16"></div>
+        <div className="w-px h-32 bg-white opacity-70 mb-8"></div>
+
+        <div className="flex flex-col gap-8 items-center">
+          <div className="w-12 h-12 border border-white rounded-full flex items-center justify-center text-white hover:bg-white hover:text-orange-600 transition duration-300 cursor-pointer">
+            <FaFacebookF size={20} />
+          </div>
+          <div className="w-12 h-12 border border-white rounded-full flex items-center justify-center text-white hover:bg-white hover:text-orange-600 transition duration-300 cursor-pointer">
+            <FaTwitter size={20} />
+          </div>
+
+          <div className="w-12 h-12 border border-white rounded-full flex items-center justify-center text-white hover:bg-white hover:text-orange-600 transition duration-300 cursor-pointer">
+            <FaInstagram size={20} />
+          </div>
         </div>
+        <div className="w-px h-32 bg-white opacity-70 mt-8"></div>
+      </div>
       </div>
 
     
